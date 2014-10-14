@@ -11,20 +11,58 @@
 @implementation StringCheese
 
 - (NSString *) favoriteCheeseStringWithCheese:(NSString *)cheeseName {
-    /* WORK HERE */
-    return nil;
+    
+    NSString *fullSentence = [NSString stringWithFormat:@"My favorite cheese is %@.", cheeseName];
+
+    
+    return fullSentence;
 }
 
 - (NSString *) cheeseNameWithoutCheeseSuffix:(NSString *)cheeseName {
-    /* WORK HERE */
-    return nil;
+    /**
+     Removes "cheese" from the end of a string about cheese and only returns
+     the name of the cheese.
+     
+     Example usage:
+     
+     @code
+     NSString *shortName = [cheese cheeseNameWithoutCheeseSuffix:@"mozarella cheese"];
+     // shortName is "mozarella"
+     @endcode
+     
+     @param cheeseName
+     The name of the favorite cheese
+     
+     @return Returns the name of the favorite cheese without the word "cheese".
+     */
+    
+    NSRange cheeseRange = [cheeseName rangeOfString:@" cheese" options:NSCaseInsensitiveSearch];
+    
+    if (cheeseRange.location == NSNotFound)
+    {
+        return cheeseName;
+    }
+
+    NSString *withoutTheCheese = [cheeseName stringByReplacingCharactersInRange:cheeseRange withString:@"" ];
+    
+    return withoutTheCheese;
 }
 
 - (NSString *) numberOfCheesesStringWithCheeseCount:(NSUInteger)cheeseCount {
     if (cheeseCount == 1) {
-        /* WORK HERE, ASSUMING THERE IS 1 CHEESE */
+        
+        return @"1 cheese";
+        
+        
     } else {
-        /* WORK HERE, ASSUMING THERE ARE 2+ CHEESES */
+        
+        
+        NSInteger number = cheeseCount;
+        
+        NSString *result = [NSString stringWithFormat:@"%ld cheeses", (long)number];
+        
+        return result;
+        
     }
     
     /*
