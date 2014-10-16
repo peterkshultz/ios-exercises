@@ -56,10 +56,14 @@
         
     } else {
         
-        
         NSInteger number = cheeseCount;
         
-        NSString *result = [NSString stringWithFormat:@"%ld cheeses", (long)number];
+//        NSString* horribleStatement = [NSString stringWithFormat:@"%i cheeses %@", number, @"are old and moldy"];
+//    
+//        
+//        NSLog(@"%@", horribleStatement);
+        
+        NSString *result = [NSString stringWithFormat:@"%i cheeses", number];
         
         return result;
         
@@ -69,7 +73,7 @@
      (You will learn more about if/else statements in the next checkpoint.)
      */
     
-    return nil;
+   // return nil;
 }
 
 @end
