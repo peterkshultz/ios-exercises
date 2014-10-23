@@ -21,16 +21,15 @@
     
     NSString* start = @"";
     
-    NSMutableString* name = [NSMutableString stringWithString: start];
     
     for (NSInteger counter = number; counter <= otherNumber; counter++)
     {
-        NSString* update = [NSString stringWithFormat:@"%ld", (long)counter];
         
-        [name appendString: update];
+        start = [NSString stringWithFormat:@"%@%i", start, counter];
+        
     }
  
-    return name;
+    return start;
 }
 
 @end
