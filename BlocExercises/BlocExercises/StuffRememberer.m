@@ -8,10 +8,14 @@
 
 #import "StuffRememberer.h"
 
+@interface rememberThisArrayForLater;
+@property (nonatomic, strong) NSArray *arrayToRemember;
+@end
+
 @implementation StuffRememberer
 
 - (void) rememberThisArrayForLater:(NSMutableArray *)arrayToRemember {
-    /* WORK HERE */
+     
 }
 
 - (void) copyThisArrayForLater:(NSMutableArray *)arrayToCopy {
@@ -24,7 +28,7 @@
 
 - (NSMutableArray *) arrayYouShouldRemember {
     /* WORK HERE */
-    return [@[] mutableCopy];
+    return self.arrayYouShouldRemember;
 }
 
 - (NSMutableArray *) arrayYouShouldCopy {

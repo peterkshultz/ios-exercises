@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface StuffRememberer : NSObject
-
 /*
  
  In this class, there are three pairs of methods.
@@ -32,6 +31,7 @@
  @param arrayToRemember A mutable array.
  */
 - (void) rememberThisArrayForLater:(NSMutableArray *)arrayToRemember;
+
 
 /**
  Provides the remembered mutable array.
