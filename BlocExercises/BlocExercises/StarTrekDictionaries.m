@@ -52,6 +52,7 @@
     NSArray* returnArray;
     NSString* stringToAdd;
     
+    
     for (NSDictionary* dictionary in charactersArray)
     {
         stringToAdd = [(dictionary)valueForKey:(id)@"favorite drink"];

@@ -80,19 +80,19 @@
     
     NSMutableArray* theArray = [characterArray mutableCopy];
     
-//    NSPredicate* containsWorf = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] 'worf' "];
-//    
-//    [theArray filteredArrayUsingPredicate:containsWorf];
+    NSPredicate* containsWorf = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] 'worf' "];
     
-    for (NSString* strings in theArray)
-    {
-        if ([strings rangeOfString:@"worf" options:NSCaseInsensitiveSearch].location != NSNotFound)
-        {
-            return YES;
-        }
-    }
+    return [theArray filteredArrayUsingPredicate:containsWorf].count > 0;
     
-    return NO;
+//    for (NSString* strings in theArray)
+//    {
+//        if ([strings rangeOfString:@"worf" options:NSCaseInsensitiveSearch].location != NSNotFound)
+//        {
+//            return YES;
+//        }
+//    }
+    
+   // return NO;
 }
 
 @end

@@ -45,6 +45,8 @@
     for (NSInteger counter = number; counter <= otherNumber; counter++)
     {
         insertIntoArray = [NSNumber numberWithInt:counter];
+        
+        
         [theArray addObject:insertIntoArray];
     }
     
@@ -61,11 +63,21 @@
      @return The lowest number in the array as an NSInteger.
      */
     
-    NSNumber* min = [arrayOfNumbers valueForKeyPath:@"@min.floatValue"];
-    NSInteger returnMin = [min integerValue];
+    NSInteger minVal = ((NSNumber*)arrayOfNumbers[0]).integerValue;
+    
+    for (NSInteger i = 0; i< arrayOfNumbers.count; i++) {
+        
+        NSInteger toCompare = ((NSNumber*)arrayOfNumbers[i]).integerValue;
+        if ( toCompare < minVal ){
+            minVal = toCompare;
+        }
+    }
+    
+//    NSNumber* min = [arrayOfNumbers valueForKeyPath:@"@min.floatValue"];
+//    NSInteger returnMin = [min integerValue];
 
     
-    return returnMin;
+    return minVal;
 }
 
 @end
